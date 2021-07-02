@@ -18,6 +18,9 @@ use App\Http\Controllers\ProfileController;
 */
 
 Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect('/projects');
+    }
     return view('welcome');
 });
 
